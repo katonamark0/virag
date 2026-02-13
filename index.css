@@ -5,12 +5,25 @@
 body {
   margin: 0;
   background: #fdecef;
-  height: 100vh;
+  min-height: 100svh;
   overflow: hidden;
   display: flex;
   justify-content: center;
   align-items: center;
   font-family: Arial, sans-serif;
+  overflow-x: hidden;
+  padding: 16px;
+}
+
+h2{
+  position: absolute;
+  top: 20px;
+  width: 100%;
+  text-align: center;
+  font-size: clamp(22px, 5vw, 50px);
+  color: #ff4fa3;
+  z-index: 3;
+  animation-delay: 5s;
 }
 
 .container {
@@ -21,11 +34,19 @@ body {
 
 /* Szöveg */
 .text {
-  font-size: 50px;
+  font-size: clamp(22px, 5vw, 50px);
   margin-bottom: 20px;
   opacity: 0;
   animation: fadeIn 2s forwards;
   animation-delay: 4s;
+}
+
+.text1 {
+  font-size: clamp(22px, 5vw, 50px);
+  margin-bottom: 20px;
+  opacity: 0;
+  animation: fadeIn 2s forwards;
+  animation-delay: 6s;
 }
 
 .heart {
@@ -36,7 +57,7 @@ body {
 /* Virág */
 .flower {
   position: relative;
-  width: 200px;
+  width: min(200px, 80vw);
   height: 400px;
   margin: auto;
 }
@@ -194,5 +215,17 @@ body {
 
   .flower {
     transform: scale(0.85);
+  }
+}
+
+@media (max-width: 600px) {
+  .flower {
+    transform: scale(0.85);
+  }
+}
+
+@media (max-width: 360px) {
+  .flower {
+    transform: scale(0.8);
   }
 }
